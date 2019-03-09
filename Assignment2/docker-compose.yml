@@ -1,6 +1,6 @@
 version: "3"
 services:
-  jupyter-datascience-opencv:
+  jupyter-opencv:
       build:
         context: .
         dockerfile: Dockerfile
@@ -8,4 +8,4 @@ services:
         - .:/home/jovyan/work
       ports:
         - 8888:8888
-      container_name: jupyter-datascience-opencv
+      container_name: jupyter-opencv
