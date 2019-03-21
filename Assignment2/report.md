@@ -41,10 +41,10 @@ We have implemented an _inertia checking_ function as a tool to check if a box h
 
 ## Outputs
 
-We managed to get a score of 0.4144, which is quite great considering a non-deep-learning implementation. I was indeed quit surprised by the capacity and relative fastness of OpenCV implementation. Still
+We managed to get a score of 0.4144, which is quite great considering a non-deep-learning implementation. We was indeed quit surprised by the capacity and relative fastness of OpenCV implementation. We generate a video output in order to analyze the behaviour of our pipeline: the pedestrians aren't well recognize when they are quite at a long distance from the camera, as the image quality is very low. Still, when they are getting closer, we definitively are able to well 
 
 ## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA5NjU4OTYzOSw2MzgyOTU3MywtMTEyND
-I4NTI4MCwtNzU4OTg4ODMwXX0=
+eyJoaXN0b3J5IjpbLTExNTQ2Mzc4MDIsNjM4Mjk1NzMsLTExMj
+QyODUyODAsLTc1ODk4ODgzMF19
 -->
