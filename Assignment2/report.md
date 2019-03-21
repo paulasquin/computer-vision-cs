@@ -37,12 +37,14 @@ We generated datasets made of 15px*30px images containing pedestrians in the fir
 The SVM training has been done by appling first a _HOG_ transform to the images as a way the reduce the information in the input pipeline. This led also to flatten data, required for or SVM. At the end of the day, our SVM managed to reach awesome pedestrians recognition skills with an accuracy of 0.93 on the test set.
 
 ### Inertia consistency
-We have implemented an _intertia checking_ function as a tool to check if a box have a continuity in the space and time: that means a pedestrians couldn't be teleport from one part to the other of the image, then every box is likely to have another box near to it after some frames, probably the box descrbing the same pedestrians.
+We have implemented an _inertia checking_ function as a tool to check if a box have a continuity in the space and time: that means a pedestrians couldn't be teleport from one part to the other of the image, then every box is likely to have another box near to it after some frames, probably the box describing the same pedestrians. This could have been great with pedestrians, bu turned out to be inefficient, as tarp vibration was also continuous. Then we have chosen to deactivate this pipeline.
 
 ## Outputs
 
+We managed to get 
+
 ## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0NDM4ODU2Niw2MzgyOTU3MywtMTEyND
-I4NTI4MCwtNzU4OTg4ODMwXX0=
+eyJoaXN0b3J5IjpbLTExMjgwMjUyNzAsNjM4Mjk1NzMsLTExMj
+QyODUyODAsLTc1ODk4ODgzMF19
 -->
