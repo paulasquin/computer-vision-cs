@@ -26,7 +26,7 @@ Sometimes, the same person can be cut in multiple contours: legs, bust, head... 
 
 ### Box ratio filter
 
-Humans are not cubic
+Humans are not cubic: unless if pedestrians are crawling on the ground, they should be taller than larger. This way, we eject from or list of potential-human-boxes the ones that haven't a height/width ratio between 1 and 12.
 
 ### HOG & SVM
 #### Positive (human) dataset
@@ -52,6 +52,6 @@ This class is held to generate the dataset
 
 ## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3NjUwMTUxMSw2MzgyOTU3MywtMTEyND
+eyJoaXN0b3J5IjpbLTc0ODE0ODI1Myw2MzgyOTU3MywtMTEyND
 I4NTI4MCwtNzU4OTg4ODMwXX0=
 -->
