@@ -4,15 +4,25 @@ Paul Asquin, CentraleSupélec MSc in AI March 2019
 ## Introduction
 For this project
 
+## Project structure
+
+## Box class
+
+## Interface class
+
 ## Data pipeline
 
-### Focus on box merging
+### Background   substraction
 
-### Focus on box ratio filter
+### Get contours
 
-### Focus on 
-### Focus on HOG & SVM
+### Box merging
+
+### Box ratio filter
+
+### HOG & SVM
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4MTk3NDAxMCwtNzU4OTg4ODMwXX0=
+eyJoaXN0b3J5IjpbLTk4NTQ1NTU4OSwtNzU4OTg4ODMwXX0=
 -->
