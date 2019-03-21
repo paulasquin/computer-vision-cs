@@ -11,7 +11,7 @@ The most important point of this report is to present the data pipeline and how 
 
 ### Background  substraction
 ![Background substraction](https://i.ibb.co/xY1gqR0/287.jpg =250x)
-The OpenCV background substractor definitively is a great tool for this project: we created a _createBackgroundSubtractorMOG2_ object and applied images to it, allowing the object to generate masked-images such as the one displayed on the top. The background substractor put in evidence the moving entities: indeed, we can see the pedestrians moving, but we have a lot of noise, from the tarp moving with the wind to the shadow of the persons.
+The OpenCV background substractor definitively is a great tool for this project: we created a _createBackgroundSubtractorMOG2_ object and applied images to it, allowing the object to generate masked-images such as the one displayed on the top. The background substractor puts in evidence the moving entities: indeed, we can see the pedestrians moving, but we have a lot of noise, from the tarp moving with the wind to the person shadows.
 
 ### Get contours
 
@@ -43,6 +43,6 @@ This class is held to generate the dataset
 
 ## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMyMTgzODc2NSwtMTEyNDI4NTI4MCwtNz
-U4OTg4ODMwXX0=
+eyJoaXN0b3J5IjpbLTEwMTExNDYwNDYsLTExMjQyODUyODAsLT
+c1ODk4ODgzMF19
 -->
