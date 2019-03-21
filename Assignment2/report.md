@@ -49,8 +49,8 @@ _Proposed solution for image 287_
 
 ![Proposed solution: Image sample 287](https://i.ibb.co/Z6hyVfB/download.png =250x)
 
-Still, if I could have put more time on this project, I would have highly wanted to train the SVM on a lot of pedestrians images. Indeed, I haven't managed to take the time to extract pedestrians from the Caltech dataset. I am using pedestrians from my video to recognize pedestrians from the same video: this is a really big problem, as I could have highly overfit on the characteristics of the 3 persons walking. I hope the SVM classifier still is capable to identify other humans, and that it will perform great on your test dataset. I haden't the time to do it, but I totally know that I should have fed my SVM with other positive and negative samples than the ones from the provided dataset.
+Still, if I could have put more time on this project, I would have highly wanted to train the SVM on a lot of pedestrians images. Indeed, I haven't managed to take the time to extract pedestrians from the Caltech dataset. I am using pedestrians from the video to recognize pedestrians from the same video: this is a really big problem, as I could have highly overfited on the characteristics of the 3 persons walking. I hope the SVM classifier still is capable to identify other humans, and that it will perform great on your test dataset. I haden't the time to do it, but I totally know that I should have fed my SVM with other positive and negative samples than the ones from the provided dataset.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjkzMjgxNjI3LDExODUyMTE2NTcsNjM4Mj
-k1NzMsLTExMjQyODUyODAsLTc1ODk4ODgzMF19
+eyJoaXN0b3J5IjpbMTI3Nzc4MDIxMSwxMTg1MjExNjU3LDYzOD
+I5NTczLC0xMTI0Mjg1MjgwLC03NTg5ODg4MzBdfQ==
 -->
