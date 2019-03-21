@@ -18,9 +18,11 @@ In order to work with the background-substracted images, we have chosen to work 
 
 ![Contour image 287](https://i.ibb.co/rM6ZL9t/download.png =250x)
 
-Indeed, we managed to extract the humans, but we also extracted part of the tarp.
+Indeed, we managed to extract the humans, but we also extracted part of the tarp. We will create a first step of boxes with the results of this methods: 1 box correspond to the boundaries of 1 contour.
 
 ### Box merging
+
+Sometimes, the same person can be cut in multiple contours: legs, 
 
 ### Box ratio filter
 
@@ -48,6 +50,6 @@ This class is held to generate the dataset
 
 ## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTMzMjE2MjAsNjM4Mjk1NzMsLTExMjQyOD
-UyODAsLTc1ODk4ODgzMF19
+eyJoaXN0b3J5IjpbMzU5MDgxNDY0LDYzODI5NTczLC0xMTI0Mj
+g1MjgwLC03NTg5ODg4MzBdfQ==
 -->
