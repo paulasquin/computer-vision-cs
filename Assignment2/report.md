@@ -2,13 +2,17 @@
 Paul Asquin, CentraleSupélec MSc in AI March 2019
 
 ## Introduction
-For this project
 
 ## Project structure
 
-## Box class
+### Box class
 
-## Interface class
+
+### Interface class
+
+### SVM class
+
+### General functions
 
 ## Data pipeline
 
@@ -30,5 +34,5 @@ For this project
 
 ## Outputs
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTE1MTYxNTgzLC03NTg5ODg4MzBdfQ==
+eyJoaXN0b3J5IjpbMzczMTIyNjA2LC03NTg5ODg4MzBdfQ==
 -->
