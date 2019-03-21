@@ -22,9 +22,11 @@ Indeed, we managed to extract the humans, but we also extracted part of the tarp
 
 ### Box merging
 
-Sometimes, the same person can be cut in multiple contours: legs, 
+Sometimes, the same person can be cut in multiple contours: legs, bust, head... All split apart. In order to override that kind of problem, we have chosen to merge together two boxes that would be close one of the other, and stack one on the top of the other. This way, we are able to have 1 unique box per human, and still boxes with part of the tarp.
 
 ### Box ratio filter
+
+Humans are not cubic
 
 ### HOG & SVM
 #### Positive (human) dataset
@@ -50,6 +52,6 @@ This class is held to generate the dataset
 
 ## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzU5MDgxNDY0LDYzODI5NTczLC0xMTI0Mj
-g1MjgwLC03NTg5ODg4MzBdfQ==
+eyJoaXN0b3J5IjpbLTY3NjUwMTUxMSw2MzgyOTU3MywtMTEyND
+I4NTI4MCwtNzU4OTg4ODMwXX0=
 -->
