@@ -43,7 +43,7 @@ We have implemented an _inertia checking_ function as a tool to check if a box h
 
 ## Outputs, pros, cons and possible improvements
 
-We managed to get a score of 0.4144, which is quite great considering a non-deep-learning implementation. We was indeed quit surprised by the capacity and relative fastness of OpenCV implementation. We generate a video output in order to analyze the behaviour of our pipeline: the pedestrians aren't well recognize when they are quite at a long distance from the camera, as the image quality is very low. Still, when they are getting closer, we definitively are able to well defined the box that are fitting to them, and this went even better thanks to the SVM classifier.
+We managed to get a score of 0.4144, which is quite great considering a non-deep-learning implementation. We was indeed quit surprised by the capacity and relative fastness of OpenCV implementation. We generate a video output in order to analyze the behaviour of our pipeline: the pedestrians aren't well recognize when they are quite at a long distance from the camera, as the image quality is very low. Still, when they are getting closer, we definitively are able to well defined the box that are fitting to them, and this went even better thanks to the SVM classifier. In some rare case, we can still see the tarp-area activated, as part of the error of the SVM classifier.
 
 _Proposed solution for image 287_
 
@@ -51,6 +51,6 @@ _Proposed solution for image 287_
 
 Still, if I could have put more time on this project, I would have highly wanted to train the SVM on a lot of pedestrians images. Indeed, I haven't managed to take the time to extract pedestrians from the Caltech dataset. I am using pedestrians from my video to recognize pedestrians from the same video: this is a really big problem, as I could have highly overfit on the characteristics of the 3 persons walking. I hope the SVM classifier still is capable to identify other humans, and that it will perform great on your test dataset. I haden't the time to do it, but I totally know that I should have fed my SVM with other positive and negative samples than the ones from the provided dataset.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDcyNDIzMDc2LDExODUyMTE2NTcsNjM4Mj
+eyJoaXN0b3J5IjpbNjkzMjgxNjI3LDExODUyMTE2NTcsNjM4Mj
 k1NzMsLTExMjQyODUyODAsLTc1ODk4ODgzMF19
 -->
