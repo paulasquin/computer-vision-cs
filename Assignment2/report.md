@@ -10,7 +10,9 @@ We will consider our project having, as input, the list of images where want to 
 The most important point of this report is to present the data pipeline and how it ends up achieving the person recognition: here is the detailed process.
 
 ### Background  substraction
-![enter image description here](https://ibb.co/PMcWGfn)
+![Background substraction](https://i.ibb.co/xY1gqR0/287.jpg =250x)
+The OpenCV background subs
+
 ### Get contours
 
 ### Box merging
@@ -41,6 +43,6 @@ This class is held to generate the dataset
 
 ## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzIxMzY4NzYsLTExMjQyODUyODAsLT
+eyJoaXN0b3J5IjpbLTE3MTY0MTQ5NzMsLTExMjQyODUyODAsLT
 c1ODk4ODgzMF19
 -->
