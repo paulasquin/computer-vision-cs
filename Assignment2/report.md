@@ -43,8 +43,8 @@ We have implemented an _inertia checking_ function as a tool to check if a box h
 
 We managed to get a score of 0.4144, which is quite great considering a non-deep-learning implementation. We was indeed quit surprised by the capacity and relative fastness of OpenCV implementation. We generate a video output in order to analyze the behaviour of our pipeline: the pedestrians aren't well recognize when they are quite at a long distance from the camera, as the image quality is very low. Still, when they are getting closer, we definitively are able to well defined the box that are fitting to them, and this went even better thanks to the SVM classifier.
 
-Still, if I could have put more time on this project, I would have highly wanted to train the SVM on a lot of pedestrians images. Indeed, I haven't managed to take the time to extract pedestrians from the Caltech dataset. I am using pedestrians from my video to recognize pedestrians fr
+Still, if I could have put more time on this project, I would have highly wanted to train the SVM on a lot of pedestrians images. Indeed, I haven't managed to take the time to extract pedestrians from the Caltech dataset. I am using pedestrians from my video to recognize pedestrians from the same video: this is a really big problem, as I could have highly overfit on the characteristics of the 3 persons walking. I hope the SVM classifier still is capable to identify other humans, and that it will perform great on your test dataset. I haden't the time to do it, but 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY1NTgxMjkwOSw2MzgyOTU3MywtMTEyND
+eyJoaXN0b3J5IjpbMTg2NDI0NTYyNyw2MzgyOTU3MywtMTEyND
 I4NTI4MCwtNzU4OTg4ODMwXX0=
 -->
