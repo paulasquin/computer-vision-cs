@@ -41,10 +41,10 @@ We have implemented an _inertia checking_ function as a tool to check if a box h
 
 ## Outputs
 
-We managed to get 
+We managed to get a score of 0.4144, which is quite great considering a non-deep-learning implementation. I was indeed quit surprised by the capacity and relative fastness of OpenCV implementation. Still
 
 ## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMjgwMjUyNzAsNjM4Mjk1NzMsLTExMj
-QyODUyODAsLTc1ODk4ODgzMF19
+eyJoaXN0b3J5IjpbMTA5NjU4OTYzOSw2MzgyOTU3MywtMTEyND
+I4NTI4MCwtNzU4OTg4ODMwXX0=
 -->
