@@ -10,12 +10,14 @@ We will consider our project having, as input, the list of images where want to 
 The most important point of this report is to present the data pipeline and how it ends up achieving the person recognition: here is the detailed process.
 
 ### Background  substraction
+_Background substraction from image 287_
 ![Background substraction image 287](https://i.ibb.co/xY1gqR0/287.jpg =250x)
 The OpenCV background substractor definitively is a great tool for this project: we created a _createBackgroundSubtractorMOG2_ object and applied images to it, allowing the object to generate masked-images such as the one displayed on the top. The background substractor puts in evidence the moving entities: indeed, we can see the pedestrians moving, but we have a lot of noise, from the tarp moving with the wind to the people shadows. We will have to combine this tool with others.
 
 ### Get contours
 In order to work with the background-substracted images, we have chosen to work with contours as a start for the box finding. After having resized and then applied a _GaussianBlur_ to the images in order to rub out the resize effects, we used the _findContours_. By drawing every contours in the same image, we can obtain results such as this one:
 
+_Contours finding from image 287_
 ![Contour image 287](https://i.ibb.co/rM6ZL9t/download.png =250x)
 
 Indeed, we managed to extract the humans, but we also extracted part of the tarp. We will create a first step of boxes with the results of this methods: 1 box correspond to the boundaries of 1 contour.
@@ -43,10 +45,12 @@ We have implemented an _inertia checking_ function as a tool to check if a box h
 
 We managed to get a score of 0.4144, which is quite great considering a non-deep-learning implementation. We was indeed quit surprised by the capacity and relative fastness of OpenCV implementation. We generate a video output in order to analyze the behaviour of our pipeline: the pedestrians aren't well recognize when they are quite at a long distance from the camera, as the image quality is very low. Still, when they are getting closer, we definitively are able to well defined the box that are fitting to them, and this went even better thanks to the SVM classifier.
 
+_Proposed solution for image 287_
+
 ![Proposed solution: Image sample 287](https://i.ibb.co/Z6hyVfB/download.png =250x)
 
 Still, if I could have put more time on this project, I would have highly wanted to train the SVM on a lot of pedestrians images. Indeed, I haven't managed to take the time to extract pedestrians from the Caltech dataset. I am using pedestrians from my video to recognize pedestrians from the same video: this is a really big problem, as I could have highly overfit on the characteristics of the 3 persons walking. I hope the SVM classifier still is capable to identify other humans, and that it will perform great on your test dataset. I haden't the time to do it, but I totally know that I should have fed my SVM with other positive and negative samples than the ones from the provided dataset.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjc0MTQxNDcsMTE4NTIxMTY1Nyw2Mz
-gyOTU3MywtMTEyNDI4NTI4MCwtNzU4OTg4ODMwXX0=
+eyJoaXN0b3J5IjpbNDcyNDIzMDc2LDExODUyMTE2NTcsNjM4Mj
+k1NzMsLTExMjQyODUyODAsLTc1ODk4ODgzMF19
 -->
