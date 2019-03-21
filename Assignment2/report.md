@@ -31,9 +31,10 @@ Humans are not cubic: unless if pedestrians are crawling on the ground, they sho
 ### HOG & SVM
 We wanted to have a SVM guessing if what its seeing is a human or a random background sample. Then, we have implemented dataset generation function
 #### Positive (human) and negative (background) dataset
-We generated datasets made of 15px*30px images containing pedestrians in the first case, or random background ele. 
+We generated datasets made of 15px*30px images containing pedestrians in the first case, or random background element (as long as they don't overfit on humans) to train a binary SVM classifier. 
 
 #### SVM Training
+The SVM training has been done by appling first a _HOG_ transform to the images as a way the reduce the information in the input pipeline. This led also to flatten data, required  
 
 ### Inertia consistency
 
@@ -41,6 +42,6 @@ We generated datasets made of 15px*30px images containing pedestrians in the fir
 
 ## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwNzQ2MTkxMiw2MzgyOTU3MywtMTEyND
-I4NTI4MCwtNzU4OTg4ODMwXX0=
+eyJoaXN0b3J5IjpbLTIxMzc5OTU3NzksNjM4Mjk1NzMsLTExMj
+QyODUyODAsLTc1ODk4ODgzMF19
 -->
