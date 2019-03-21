@@ -16,7 +16,7 @@ Paul Asquin, CentraleSupélec MSc in AI March 2019
 
 ## Data pipeline
 
-### Background   substraction
+### Background  substraction
 
 ### Get contours
 
@@ -33,6 +33,8 @@ Paul Asquin, CentraleSupélec MSc in AI March 2019
 ### Inertia consistency
 
 ## Outputs
+
+## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzczMTIyNjA2LC03NTg5ODg4MzBdfQ==
+eyJoaXN0b3J5IjpbLTExMjQyODUyODAsLTc1ODk4ODgzMF19
 -->
