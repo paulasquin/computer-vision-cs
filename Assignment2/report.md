@@ -39,12 +39,12 @@ The SVM training has been done by appling first a _HOG_ transform to the images 
 ### Inertia consistency
 We have implemented an _inertia checking_ function as a tool to check if a box have a continuity in the space and time: that means a pedestrians couldn't be teleport from one part to the other of the image, then every box is likely to have another box near to it after some frames, probably the box describing the same pedestrians. This could have been great with pedestrians, bu turned out to be inefficient, as tarp vibration was also continuous. Then we have chosen to deactivate this pipeline.
 
-## Outputs
+## Outputs, pros, cons and possible improvements
 
-We managed to get a score of 0.4144, which is quite great considering a non-deep-learning implementation. We was indeed quit surprised by the capacity and relative fastness of OpenCV implementation. We generate a video output in order to analyze the behaviour of our pipeline: the pedestrians aren't well recognize when they are quite at a long distance from the camera, as the image quality is very low. Still, when they are getting closer, we definitively are able to well 
+We managed to get a score of 0.4144, which is quite great considering a non-deep-learning implementation. We was indeed quit surprised by the capacity and relative fastness of OpenCV implementation. We generate a video output in order to analyze the behaviour of our pipeline: the pedestrians aren't well recognize when they are quite at a long distance from the camera, as the image quality is very low. Still, when they are getting closer, we definitively are able to well defined the box that are fitting to them, and this went even better thanks to the SVM classifier.
 
-## Pros, cons and possible improvements
+Sti
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNTQ2Mzc4MDIsNjM4Mjk1NzMsLTExMj
+eyJoaXN0b3J5IjpbLTE4MTYyNDk2MjcsNjM4Mjk1NzMsLTExMj
 QyODUyODAsLTc1ODk4ODgzMF19
 -->
