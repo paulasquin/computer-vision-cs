@@ -29,9 +29,9 @@ Sometimes, the same person can be cut in multiple contours: legs, bust, head... 
 Humans are not cubic: unless if pedestrians are crawling on the ground, they should be taller than larger. This way, we eject from or list of potential-human-boxes the ones that haven't a height/width ratio between 1 and 12. This lead to a score of ~0.18, that we want to improve with other techniques.
 
 ### HOG & SVM
-We wanted to have a SVM guessing if what its seeing 
-#### Positive (human) dataset
-#### Negative (background) dataset
+We wanted to have a SVM guessing if what its seeing is a human or a random background sample. Then, we have implemented dataset generation function
+#### Positive (human) and negative (background) dataset
+We generated datasets made of 15px*30px images containing pedestrians in the first case, or random background ele. 
 
 #### SVM Training
 
@@ -41,6 +41,6 @@ We wanted to have a SVM guessing if what its seeing
 
 ## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDk1NjkyNDYsNjM4Mjk1NzMsLTExMj
-QyODUyODAsLTc1ODk4ODgzMF19
+eyJoaXN0b3J5IjpbMjAwNzQ2MTkxMiw2MzgyOTU3MywtMTEyND
+I4NTI4MCwtNzU4OTg4ODMwXX0=
 -->
