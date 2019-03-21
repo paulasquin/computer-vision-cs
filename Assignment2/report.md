@@ -7,9 +7,10 @@ This project aim was to develop a method to identify humans moving in front of a
 We will consider our project having, as input, the list of images where want to find humans, and as output, an list of shape (number_of_frame, id_of_box_in_the_frame, box boundaries), that will describe where are humans in the succession of images.
 
 ## Data pipeline
-The most important point of this report is to present the data pipeline and how it ends up achieving the person recognition.
-### Background  substraction
+The most important point of this report is to present the data pipeline and how it ends up achieving the person recognition: here is the detailed process.
 
+### Background  substraction
+![enter image description here](https://ibb.co/PMcWGfn)
 ### Get contours
 
 ### Box merging
@@ -40,6 +41,6 @@ This class is held to generate the dataset
 
 ## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg3MTI3OTg0MiwtMTEyNDI4NTI4MCwtNz
-U4OTg4ODMwXX0=
+eyJoaXN0b3J5IjpbLTE4NzIxMzY4NzYsLTExMjQyODUyODAsLT
+c1ODk4ODgzMF19
 -->
