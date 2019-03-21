@@ -10,13 +10,15 @@ We will consider our project having, as input, the list of images where want to 
 The most important point of this report is to present the data pipeline and how it ends up achieving the person recognition: here is the detailed process.
 
 ### Background  substraction
-![Background substraction](https://i.ibb.co/xY1gqR0/287.jpg =250x)
+![Background substraction image 287](https://i.ibb.co/xY1gqR0/287.jpg =250x)
 The OpenCV background substractor definitively is a great tool for this project: we created a _createBackgroundSubtractorMOG2_ object and applied images to it, allowing the object to generate masked-images such as the one displayed on the top. The background substractor puts in evidence the moving entities: indeed, we can see the pedestrians moving, but we have a lot of noise, from the tarp moving with the wind to the people shadows. We will have to combine this tool with others.
 
 ### Get contours
-In order to work with the background-substracted images, we have chosen to work with contours as a start for the box finding. After having resized and then applied a _GaussianBlur_ to the images in order to rub out the resize effects, we used the _findContours_. By drawing every contours in t
+In order to work with the background-substracted images, we have chosen to work with contours as a start for the box finding. After having resized and then applied a _GaussianBlur_ to the images in order to rub out the resize effects, we used the _findContours_. By drawing every contours in the same image, we can obtain results such as this one:
 
-![enter image description here](https://i.ibb.co/rM6ZL9t/download.png =250x)
+![Contour image 287](https://i.ibb.co/rM6ZL9t/download.png =250x)
+
+Indeed, we managed to extract the humans, but we also extracted part of the tarp.
 
 ### Box merging
 
@@ -46,6 +48,6 @@ This class is held to generate the dataset
 
 ## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ4NzY3MjA5OCw2MzgyOTU3MywtMTEyND
-I4NTI4MCwtNzU4OTg4ODMwXX0=
+eyJoaXN0b3J5IjpbNTMzMjE2MjAsNjM4Mjk1NzMsLTExMjQyOD
+UyODAsLTc1ODk4ODgzMF19
 -->
