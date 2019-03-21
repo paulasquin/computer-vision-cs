@@ -4,11 +4,11 @@ Paul Asquin, CentraleSupélec MSc in AI March 2019
 ## Introduction
 This project aim was to develop a method to identify humans moving in front of a fixed camera without using Deep Learning methods. In order to make such think possible, we had to work extensively with "classical techniques" from OpenCV.
 
-We will consider our project having, as input, the list of images here we want to find humans, and as output, an array of shape (n
+We will consider our project having, as input, the list of images here we want to find humans, and as output, an list of shape (number_of_frame, id_of_box_in_the_frame, box boundaries).
 ## Project structure
 
 ### Box class
-
+In order to work on this project, we decided to create our own "box" obje
 
 ### Interface class
 
@@ -38,6 +38,6 @@ We will consider our project having, as input, the list of images here we want t
 
 ## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3NjI3NDU5OCwtMTEyNDI4NTI4MCwtNz
-U4OTg4ODMwXX0=
+eyJoaXN0b3J5IjpbLTk0Mzc3MDA2LC0xMTI0Mjg1MjgwLC03NT
+g5ODg4MzBdfQ==
 -->
