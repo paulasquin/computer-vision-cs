@@ -34,14 +34,15 @@ We wanted to have a SVM guessing if what its seeing is a human or a random backg
 We generated datasets made of 15px*30px images containing pedestrians in the first case, or random background element (as long as they don't overfit on humans) to train a binary SVM classifier. 
 
 #### SVM Training
-The SVM training has been done by appling first a _HOG_ transform to the images as a way the reduce the information in the input pipeline. This led also to flatten data, required  
+The SVM training has been done by appling first a _HOG_ transform to the images as a way the reduce the information in the input pipeline. This led also to flatten data, required for or SVM. At the end of the day, our SVM managed to reach awesome pedestrians recognition skills with an accuracy of 0.93 on the test set.
 
 ### Inertia consistency
+We have implemented a function that was checking 
 
 ## Outputs
 
 ## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMzc5OTU3NzksNjM4Mjk1NzMsLTExMj
-QyODUyODAsLTc1ODk4ODgzMF19
+eyJoaXN0b3J5IjpbMTQzNzU3ODQxNSw2MzgyOTU3MywtMTEyND
+I4NTI4MCwtNzU4OTg4ODMwXX0=
 -->
