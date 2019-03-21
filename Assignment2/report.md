@@ -11,9 +11,10 @@ The most important point of this report is to present the data pipeline and how 
 
 ### Background  substraction
 ![Background substraction](https://i.ibb.co/xY1gqR0/287.jpg =250x)
-The OpenCV background substractor definitively is a great tool for this project: we created a _createBackgroundSubtractorMOG2_ object and applied images to it, allowing the object to generate masked-images such as the one displayed on the top. The background substractor puts in evidence the moving entities: indeed, we can see the pedestrians moving, but we have a lot of noise, from the tarp moving with the wind to the person shadows.
+The OpenCV background substractor definitively is a great tool for this project: we created a _createBackgroundSubtractorMOG2_ object and applied images to it, allowing the object to generate masked-images such as the one displayed on the top. The background substractor puts in evidence the moving entities: indeed, we can see the pedestrians moving, but we have a lot of noise, from the tarp moving with the wind to the people shadows. We will have to combine this tool with others.
 
 ### Get contours
+In order to work with the background-substracted images, we choose to use the _findContours method: after having resized and then applied a GaussianBlur
 
 ### Box merging
 
@@ -43,6 +44,6 @@ This class is held to generate the dataset
 
 ## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTExNDYwNDYsLTExMjQyODUyODAsLT
+eyJoaXN0b3J5IjpbLTE1OTUwODYxNTcsLTExMjQyODUyODAsLT
 c1ODk4ODgzMF19
 -->
