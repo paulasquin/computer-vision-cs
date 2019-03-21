@@ -4,6 +4,15 @@ Paul Asquin, CentraleSupélec MSc in AI March 2019
 ## Introduction
 For this project
 
+## Data pipeline
+
+### Focus on box merging
+
+### Focus on box ratio filter
+
+### Focus on 
+### Focus on HOG & SVM
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1ODk4ODgzMF19
+eyJoaXN0b3J5IjpbMTU4MTk3NDAxMCwtNzU4OTg4ODMwXX0=
 -->
