@@ -2,7 +2,7 @@
 Paul Asquin, CentraleSupélec MSc in AI March 2019
 
 ## Introduction
-
+This project aim was to develop a method to identify humans moving in front of a fixed camera without using Deep Learning methods. In order to make such think possible, we had to work extensively with "classical techniques"  opencv
 ## Project structure
 
 ### Box class
@@ -36,5 +36,6 @@ Paul Asquin, CentraleSupélec MSc in AI March 2019
 
 ## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMjQyODUyODAsLTc1ODk4ODgzMF19
+eyJoaXN0b3J5IjpbNTkzMDE1OTQzLC0xMTI0Mjg1MjgwLC03NT
+g5ODg4MzBdfQ==
 -->
