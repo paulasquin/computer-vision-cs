@@ -21,8 +21,14 @@ For this project
 ### Box ratio filter
 
 ### HOG & SVM
+#### Positive (human) dataset
+#### Negative (background) dataset
 
+#### SVM Training
 
+### Inertia consistency
+
+## Outputs
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4NTQ1NTU4OSwtNzU4OTg4ODMwXX0=
+eyJoaXN0b3J5IjpbOTE1MTYxNTgzLC03NTg5ODg4MzBdfQ==
 -->
