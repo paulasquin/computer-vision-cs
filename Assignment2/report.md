@@ -26,9 +26,10 @@ Sometimes, the same person can be cut in multiple contours: legs, bust, head... 
 
 ### Box ratio filter
 
-Humans are not cubic: unless if pedestrians are crawling on the ground, they should be taller than larger. This way, we eject from or list of potential-human-boxes the ones that haven't a height/width ratio between 1 and 12.
+Humans are not cubic: unless if pedestrians are crawling on the ground, they should be taller than larger. This way, we eject from or list of potential-human-boxes the ones that haven't a height/width ratio between 1 and 12. This lead to a score of ~0.18, that we want to improve with other techniques.
 
 ### HOG & SVM
+We wanted to have a SVM guessing if what its seeing 
 #### Positive (human) dataset
 #### Negative (background) dataset
 
@@ -36,22 +37,10 @@ Humans are not cubic: unless if pedestrians are crawling on the ground, they sho
 
 ### Inertia consistency
 
-## Project structure
-
-### Box class
-In order to work on this project, we decided to create our own _Box_ class. This object is made of simple attributes: the value of minimum x, minimum y, maximum x, maximum y that are describing the boundaries of the box. We also have implemented a _is_overlap_ method, taking a _Box_ as parameters. This function will check if the two boxes are overlapping. These lines was a quick introduction to the kind of OOP structure we applied. It may look quite obvious, thus we will be pass the presentation of such details.
-
-### Interface class
-This class is held to generate the dataset
-
-### SVM class
-
-### General functions
-
 ## Outputs
 
 ## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc0ODE0ODI1Myw2MzgyOTU3MywtMTEyND
-I4NTI4MCwtNzU4OTg4ODMwXX0=
+eyJoaXN0b3J5IjpbLTE3NDk1NjkyNDYsNjM4Mjk1NzMsLTExMj
+QyODUyODAsLTc1ODk4ODgzMF19
 -->
