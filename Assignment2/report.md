@@ -8,7 +8,7 @@ We will consider our project having, as input, the list of images where want to 
 ## Project structure
 
 ### Box class
-In order to work on this project, we decided to create our own "box" class. This object is made of simple attributes: the value of minimum x, minimum y, maximum x, maximum y that are describing the boundaries of the box. We also have implemented a _is_overlap_ method to 
+In order to work on this project, we decided to create our own _Box_ class. This object is made of simple attributes: the value of minimum x, minimum y, maximum x, maximum y that are describing the boundaries of the box. We also have implemented a _is_overlap_ method, taking a _Box_ as parameters. This function will check if the two boxes are overlapping. These lines was a quick introduction to the kind of OOP structure we applied
 
 ### Interface class
 
@@ -38,6 +38,6 @@ In order to work on this project, we decided to create our own "box" class. This
 
 ## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzA2MjM1MjY4LC0xMTI0Mjg1MjgwLC03NT
-g5ODg4MzBdfQ==
+eyJoaXN0b3J5IjpbODkzNTcxMjMsLTExMjQyODUyODAsLTc1OD
+k4ODgzMF19
 -->
