@@ -11,7 +11,7 @@ The most important point of this report is to present the data pipeline and how 
 
 ### Background  substraction
 ![Background substraction](https://i.ibb.co/xY1gqR0/287.jpg =250x)
-The OpenCV background subs
+The OpenCV background substractor definitively is a great tool for this project: we created a _createBackgroundSubtractorMOG2_ object and applied images to it, allowing the object to generate the masked-image displayed on the top. The background substractor put in 
 
 ### Get contours
 
@@ -43,6 +43,6 @@ This class is held to generate the dataset
 
 ## Pros, cons and possible improvements
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTY0MTQ5NzMsLTExMjQyODUyODAsLT
-c1ODk4ODgzMF19
+eyJoaXN0b3J5IjpbMTM0MTg5MDUwLC0xMTI0Mjg1MjgwLC03NT
+g5ODg4MzBdfQ==
 -->
