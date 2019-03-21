@@ -24,9 +24,9 @@ from skimage import feature
 data_root = "img1"
 BACK_SUB_FOLDER_PATH = "back_sub"
 DATASET_SVM_PATH = "dataset_svm"
-VIDEO_NAME = "apply_box"
+VIDEO_NAME = "asquin_apply_box"
 MIN_HUMAN_RATIO = 1
-MAX_HUMAN_RATIO = 6
+MAX_HUMAN_RATIO = 12
 MAX_RATIO_MERGE = MAX_HUMAN_RATIO
 
 MAX_DIST_CONSIST = 10
@@ -46,7 +46,8 @@ print("Starting asquin.py / .ipynb")
 print("Please be sure to be in the same folder than 'gt' and 'img1.")
 print("The process leads to a SVM machine training along with pictures filters and extraction.")
 print("Please be aware that folders are going to be created, such as", BACK_SUB_FOLDER_PATH, "or", DATASET_SVM_PATH)
-print("It may take up to 1 minutes. Thanks for waiting :)\n")
+print("Afterward, please have a look at the output video:", VIDEO_NAME + ".avi")
+print("The total process may take up to 1 minutes. Thanks for waiting :)\n")
 
 
 # # Evaluation and dataset function
@@ -133,8 +134,8 @@ def disp_image(im):
     Just display an image using matplotlib pyplot
     :param im: image, np.array
     """
-    
     imgplot = plt.imshow(im)
+    plt.axis('off')
     plt.show()
 
 
@@ -366,7 +367,7 @@ def get_contours_human_ratio(im_path, ratio=False, disp=False):
             
             if disp:
                 print(area)
-                im2 = cv2.drawContours(im.copy(), cnt, -1, (255,0,0), 2)
+                im2 = cv2.drawContours(im, cnt, -1, (255,0,0), 2)
                 disp_image(im2)
     
             # contour width
@@ -387,7 +388,7 @@ def get_contours_human_ratio(im_path, ratio=False, disp=False):
     return les_potential_human_box
     
     
-# a = get_contours_human_ratio(BACK_SUB_FOLDER_PATH + "/220.jpg", disp=False)
+# a = get_contours_human_ratio(BACK_SUB_FOLDER_PATH + "/287.jpg", disp=True)
 
 
 # # SVM
@@ -672,7 +673,7 @@ def apply_box_to_video(les_im_path, les_im_backsub_path, video_name="apply_box")
     fourcc = cv2.VideoWriter_fourcc('M','J','P','G')
     video = cv2.VideoWriter(video_name + '.avi', fourcc, fps=25, frameSize=(width,height))
     
-    print("Computing boxes: contours -> merging -> ratio -> SVM")
+    print("Computing boxes: contours For this project-> merging -> ratio -> SVM")
     les_whole_box = []
     # Computing background
     for id_im, im_path in enumerate(les_im_path):
