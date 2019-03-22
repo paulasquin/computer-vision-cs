@@ -21,7 +21,6 @@ from skimage import exposure
 from skimage import feature
 
 
-data_root = "img1"
 BACK_SUB_FOLDER_PATH = "back_sub"
 DATASET_SVM_PATH = "dataset_svm"
 VIDEO_NAME = "asquin_apply_box"
@@ -41,13 +40,6 @@ _N = 684 # number of frames
 
 WIDTH_SAMPLE_SVM = 15
 HEIGHT_SAMPLE_SVM = 30
-
-print("Starting asquin.py / .ipynb")
-print("Please be sure to be in the same folder than 'gt' and 'img1.")
-print("The process leads to a SVM machine training along with pictures filters and extraction.")
-print("Please be aware that folders are going to be created, such as", BACK_SUB_FOLDER_PATH, "or", DATASET_SVM_PATH)
-print("Afterward, please have a look at the output video:", VIDEO_NAME + ".avi")
-print("The total process may take up to 1 minutes. Thanks for waiting :)\n")
 
 
 # # Evaluation and dataset function
@@ -110,7 +102,7 @@ def evaluate_solution(gt, solution, N):
     return np.asarray(score).mean()
     
 
-def show_annotation(solution, frame):
+def show_annotation(solution, frame, data_root):
     assert _N >= frame
     im = read_frame(data_root, frame)
     bbs = annotations_for_frame(solution, frame)
@@ -248,7 +240,7 @@ class Interface:
     :param data_root: string, where is the img dataset
     :param back_sub_folder: string, where should be stored the background substracted images
     """
-    def __init__(self, data_root=data_root, back_sub_folder_path=BACK_SUB_FOLDER_PATH):
+    def __init__(self, data_root, back_sub_folder_path=BACK_SUB_FOLDER_PATH):
         self.dataset_path = data_root
         self.dataset_backsub_path = back_sub_folder_path
         self.les_im_path = self.get_dataset_im_path(self.dataset_path)
@@ -275,8 +267,6 @@ class Interface:
     def apply_box_to_video(self):
         apply_box_to_video(self.les_im_path, self.les_im_backsub_path)
 
-interfacer = Interface()
-interfacer.background_substraction()
 # interfacer.apply_box_to_video()
 
 
@@ -532,23 +522,11 @@ class SVM:
         self.classifier.fit(self.X_train,self.y_train)
     
     def check_accuracy(self):
-        y_pred = svm_trainer.classifier.predict(svm_trainer.X_test)
-        print("Accuracy\n", metrics.classification_report(svm_trainer.y_test, y_pred))
-        print("SVM accuracy:",metrics.accuracy_score(svm_trainer.y_test, y_pred))
+        y_pred = self.classifier.predict(self.X_test)
+        print("Accuracy:")
+        print(metrics.classification_report(self.y_test, y_pred))
+        print("SVM accuracy:",metrics.accuracy_score(self.y_test, y_pred))
         
-        
-
-svm_trainer = SVM(interfacer.les_im_path, replace = False, load_in_ram=True)
-svm_trainer.dataset_prepare()
-
-
-# ## Train and test SVM
-
-# In[ ]:
-
-
-svm_trainer.train()
-svm_trainer.check_accuracy()
 
 
 # ## Apply boxes to video
@@ -640,7 +618,7 @@ def inertia_consistency_box(les_whole_box, max_dist=5, n_consistency=1):
     print("Done" + " "*20)
     return les_whole_box_inertia
 
-def check_is_human_svm(im, box):
+def check_is_human_svm(im, box, svm_trainer):
     """
     Use the SVM training to guess if the object in the image in the box is a human.
     :param im: image, np.array: original image to study
@@ -657,7 +635,7 @@ def check_is_human_svm(im, box):
     return y_pred[0] == 1
 
 
-def apply_box_to_video(les_im_path, les_im_backsub_path, video_name="apply_box"):
+def apply_box_to_video(les_im_path, les_im_backsub_path, svm_trainer, video_name="apply_box"):
     """
     Apply the filters and box functions, along with the SVM function, to generate the boxes and apply 
     them to a video for a better visualization
@@ -673,7 +651,7 @@ def apply_box_to_video(les_im_path, les_im_backsub_path, video_name="apply_box")
     fourcc = cv2.VideoWriter_fourcc('M','J','P','G')
     video = cv2.VideoWriter(video_name + '.avi', fourcc, fps=25, frameSize=(width,height))
     
-    print("Computing boxes: contours For this project-> merging -> ratio -> SVM")
+    print("Computing boxes: contours -> merging -> ratio -> SVM")
     les_whole_box = []
     # Computing background
     for id_im, im_path in enumerate(les_im_path):
@@ -691,7 +669,7 @@ def apply_box_to_video(les_im_path, les_im_backsub_path, video_name="apply_box")
         for box in merged_box:
             merged_ratio_box = filter_ratio(box, MIN_HUMAN_RATIO, MAX_HUMAN_RATIO)
             if merged_ratio_box is not None:
-                if check_is_human_svm(im, box):
+                if check_is_human_svm(im, box, svm_trainer):
                     les_merged_ratio_box.append(merged_ratio_box)
         
         les_whole_box.append(les_merged_ratio_box)
@@ -725,7 +703,7 @@ def apply_box_to_video(les_im_path, les_im_backsub_path, video_name="apply_box")
     
 
 
-# ## Interface function
+# ## Detect pedestrians interface function
 
 # In[ ]:
 
@@ -733,16 +711,36 @@ def apply_box_to_video(les_im_path, les_im_backsub_path, video_name="apply_box")
 def pedestrians(data_root, _W, _H, _N):
     ''' Return a list of bounding boxes in the format frame, bb_id, x,y,dx,dy '''
     
+    print("")
+    print("="*20)
+    print("Starting pedestrians detection")
+    print("Please be sure to be in the same folder than 'gt', 'img1, and", data_root, "if different from img1.")
+    print("The process leads to a SVM machine training along with pictures filters and extraction.")
+    print("Please be aware that folders are going to be created, such as", BACK_SUB_FOLDER_PATH, "or", DATASET_SVM_PATH)
+    print("Afterward, please have a look at the output video:", VIDEO_NAME + ".avi")
+    print("The total process may take up to 1 minutes. Thanks for waiting :)")
+    print("="*20)
+    print("")
+    
     if not os.path.isdir(BACK_SUB_FOLDER_PATH):
         # Generate back sub folder
         pass
     
-    interface = Interface(data_root, BACK_SUB_FOLDER_PATH)
-    # print(interface.les_im_path)
+    # Interfacer creation
+    interfacer = Interface(data_root, BACK_SUB_FOLDER_PATH)
+    # Generate background sub
+    interfacer.background_substraction()
+    
+    # SVM creation and training
+    svm_trainer = SVM(interfacer.les_im_path, replace = True, load_in_ram=True)
+    svm_trainer.dataset_prepare()
+    svm_trainer.train()
+    svm_trainer.check_accuracy()
     
     les_wholes_box_id = apply_box_to_video(
-        les_im_path=interface.les_im_path, 
-        les_im_backsub_path=interface.les_im_backsub_path,
+        les_im_path=interfacer.les_im_path, 
+        les_im_backsub_path=interfacer.les_im_backsub_path,
+        svm_trainer=svm_trainer,
         video_name=VIDEO_NAME)
     
     # Putting in format asked by evaluation function
@@ -762,9 +760,10 @@ def pedestrians(data_root, _W, _H, _N):
 
 SCORING = False
 if SCORING:
+    data_root = "img1"
     gt = read_gt(gt_path)
     check_id = 309
-    show_annotation(gt, check_id)
+    show_annotation(gt, check_id, data_root)
 
     print('A perfect score... {}'.format(evaluate_solution(gt, gt, _N)))
 
@@ -773,7 +772,7 @@ if SCORING:
     # with simply using your module 
     sol = pedestrians(data_root, _W, _H, _N)
     print('A great score! {}'.format(evaluate_solution(sol, gt, _N)))
-    show_annotation(sol, check_id)
+    show_annotation(sol, check_id, data_root)
 
 
 # ## Generate new pedestrian dataset
